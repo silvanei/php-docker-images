@@ -7,13 +7,13 @@ RUN set -e \
     && apk update \
     && apk add --no-cache --virtual .phpize-deps \
         $PHPIZE_DEPS \
-        libpng-dev=1.6.37-r0 \
-        icu-dev=59.1-r1 \
-        libzip-dev=1.3.0-r1 \
-        libxml2-dev=2.9.8-r1 \
-    && apk add --no-cache tzdata=2019c-r0 \
-    && apk add --no-cache icu=59.1-r1 \
-    && apk add --no-cache libpng=1.6.37-r0 \
+        libpng-dev \
+        icu-dev \
+        libzip-dev \
+        libxml2-dev \
+    && apk add --no-cache tzdata \
+    && apk add --no-cache icu \
+    && apk add --no-cache libpng \
     && docker-php-ext-install \
         mysqli \
         pdo_mysql \

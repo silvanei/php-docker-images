@@ -7,13 +7,13 @@ RUN set -e \
     && apk update \
     && apk add --no-cache --virtual .phpize-deps \
         $PHPIZE_DEPS \
-        libpng-dev=1.6.37-r1 \
-        icu-dev=67.1-r0 \
-        libzip-dev=1.6.1-r1 \
-        libxml2-dev=2.9.10-r5 \
-    && apk add --no-cache tzdata=2020c-r1 \
-    && apk add --no-cache icu=67.1-r0 \
-    && apk add --no-cache libpng=1.6.37-r1 \
+        libpng-dev \
+        icu-dev \
+        libzip-dev \
+        libxml2-dev \
+    && apk add --no-cache tzdata \
+    && apk add --no-cache icu \
+    && apk add --no-cache libpng \
     && docker-php-ext-install \
         mysqli \
         pdo_mysql \
@@ -24,7 +24,7 @@ RUN set -e \
         soap \
         gd \
     && pecl install \
-        xdebug-2.9.8 \
+        xdebug \
         redis \
         ds \
         timecop-beta \

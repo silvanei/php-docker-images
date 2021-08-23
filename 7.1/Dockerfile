@@ -7,13 +7,13 @@ RUN set -e \
     && apk update \
     && apk add --no-cache --virtual .phpize-deps \
         $PHPIZE_DEPS \
-        libpng-dev=1.6.37-r1 \
-        icu-dev=64.2-r1 \
-        libzip-dev=1.5.2-r0 \
-        libxml2-dev=2.9.9-r4 \
-    && apk add --no-cache tzdata=2020c-r1 \
-    && apk add --no-cache icu=64.2-r1 \
-    && apk add --no-cache libpng=1.6.37-r1 \
+        libpng-dev \
+        icu-dev \
+        libzip-dev \
+        libxml2-dev \
+    && apk add --no-cache tzdata \
+    && apk add --no-cache icu \
+    && apk add --no-cache libpng \
     && docker-php-ext-install \
         mysqli \
         pdo_mysql \
@@ -27,11 +27,13 @@ RUN set -e \
         xdebug-2.9.8 \
         redis \
         ds \
+        apcu \
         timecop-beta \
     && docker-php-ext-enable \
         xdebug \
         redis \
         ds \
+        apcu \
         timecop \
     # blackfire
     && version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
