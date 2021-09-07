@@ -1,7 +1,7 @@
 FROM phpswoole/swoole:4.7-php8.0-alpine
 
 LABEL name="swoole" \
-      Version="4.7" \
+      Version="4.7-php8.0" \
       maintanier="ads.silvanei@gmail.com"
 
 ENV COMPOSER_ALLOW_SUPERUSER=1 \

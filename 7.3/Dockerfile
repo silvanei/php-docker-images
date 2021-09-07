@@ -1,4 +1,9 @@
-FROM php:7.3.29-fpm-alpine3.13
+FROM php:7.3.30-fpm-alpine3.13
+
+LABEL name="PHP" \
+      Version="7.3.30" \
+      maintanier="ads.silvanei@gmail.com" \
+      alpine-package-version="https://pkgs.alpinelinux.org/packages?name=nginx&branch=v3.12&repo=main&arch=x86"
 
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
     TZ="America/Sao_Paulo"

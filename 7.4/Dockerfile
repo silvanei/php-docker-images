@@ -1,7 +1,7 @@
-FROM php:7.4.22-fpm-alpine3.13
+FROM php:7.4.23-fpm-alpine3.13
 
 LABEL name="PHP" \
-      Version="7.4.22" \
+      Version="7.4.23" \
       maintanier="ads.silvanei@gmail.com" \
       alpine-package-version="https://pkgs.alpinelinux.org/packages?name=nginx&branch=v3.12&repo=main&arch=x86"
 
