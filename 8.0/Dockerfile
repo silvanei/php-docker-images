@@ -1,4 +1,4 @@
-FROM php:8.0.10-fpm-alpine3.13
+FROM php:8.0.10-fpm-alpine3.14
 
 LABEL name="PHP" \
       Version="8.0.10" \
@@ -16,10 +16,12 @@ RUN set -e \
         icu-dev \
         libzip-dev \
         libxml2-dev \
+        mpdecimal-dev \
     && apk add --no-cache tzdata \
     && apk add --no-cache icu \
     && apk add --no-cache libpng \
     && apk add --no-cache libzip \
+    && apk add --no-cache mpdecimal \
     && docker-php-ext-install \
         mysqli \
         pdo_mysql \
@@ -31,10 +33,12 @@ RUN set -e \
         gd \
     && pecl install \
         ds \
+        decimal \
         redis \
         xdebug \
     && docker-php-ext-enable \
         ds \
+        decimal \
         redis \
         xdebug \
     # blackfire
