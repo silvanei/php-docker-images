@@ -50,3 +50,5 @@ RUN set -e \
     && docker-php-source delete \
     && rm -rf /var/cache/* \
     && rm -Rf /tmp/*
+
+USER www-data:www-data

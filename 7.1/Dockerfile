@@ -57,3 +57,5 @@ RUN set -e \
     && rm -Rf /tmp/*
 
 WORKDIR /var/www
+
+USER www-data:www-data

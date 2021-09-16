@@ -16,11 +16,13 @@ RUN set -e \
         libzip-dev \
         libxml2-dev \
         boost-dev \
+        mpdecimal-dev \
     && apk add --no-cache tzdata \
     && apk add --no-cache icu \
     && apk add --no-cache libpng \
     && apk add --no-cache libzip \
     && apk add --no-cache boost \
+    && apk add --no-cache mpdecimal \
     && docker-php-ext-install \
         mysqli \
         pdo_mysql \
@@ -33,9 +35,11 @@ RUN set -e \
     && pecl install \
         ds \
         redis \
+        mpdecimal \
     && docker-php-ext-enable \
         ds \
         redis \
+        mpdecimal \
     # install debug YASD
     && curl -A "Docker" -o /tmp/yasd.tar.gz -D - -L -s https://github.com/swoole/yasd/archive/v0.3.9.tar.gz \
     && mkdir -p /tmp/yasd \
@@ -50,3 +54,5 @@ RUN set -e \
     && rm -Rf /tmp/*
 
 WORKDIR /var/www
+
+USER www-data:www-data
