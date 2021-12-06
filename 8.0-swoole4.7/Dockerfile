@@ -21,6 +21,7 @@ RUN set -e \
     && apk add --no-cache libpng \
     && apk add --no-cache libzip \
     && apk add --no-cache boost \
+    && apk add --no-cache inotify-tools \
     && docker-php-ext-install \
         mysqli \
         pdo_mysql \
@@ -31,9 +32,11 @@ RUN set -e \
         soap \
         gd \
     && pecl install \
+        inotify \
         ds \
         redis \
     && docker-php-ext-enable \
+        inotify \
         ds \
         redis \
     # install debug YASD
