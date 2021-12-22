@@ -1,4 +1,4 @@
-FROM php:7.4.23-fpm-alpine3.14
+FROM php:7.4.27-fpm-alpine3.14
 
 LABEL name="PHP" \
       Version="7.4.23" \
@@ -36,13 +36,11 @@ RUN set -e \
         redis \
         ds \
         decimal \
-        timecop-beta \
     && docker-php-ext-enable \
         xdebug \
         redis \
         ds \
         decimal \
-        timecop \
     # blackfire
     && version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
     && curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/alpine/amd64/$version \
