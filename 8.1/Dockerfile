@@ -1,7 +1,7 @@
-FROM php:8.1.1-fpm-alpine3.15
+FROM php:8.1.3-fpm-alpine3.15
 
 LABEL name="PHP" \
-      Version="8.1.1" \
+      Version="8.1.3" \
       maintanier="ads.silvanei@gmail.com" \
       alpine-package-version="https://pkgs.alpinelinux.org/packages?name=mpdecimal&branch=v3.15&repo=main&arch=x86"
 

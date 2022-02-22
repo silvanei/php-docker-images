@@ -35,6 +35,6 @@ jobs:
           context: 8.1/
           platforms: linux/amd64
           push: true
-          tags: silvanei/php:8.1-fpm
+          tags: silvanei/php:8.1-fpm,silvanei/php:latest
           cache-from: type=registry,ref=silvanei/php:8.1-fpm
           cache-to: type=inline
