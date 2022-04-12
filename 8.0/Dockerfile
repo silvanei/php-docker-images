@@ -1,4 +1,4 @@
-FROM php:8.0.16-fpm-alpine3.14
+FROM php:8.0.17-fpm-alpine3.15
 
 LABEL name="PHP" \
       Version="8.0.16" \
