@@ -1,7 +1,7 @@
-FROM php:8.0.20-fpm-alpine3.16
+FROM php:8.0.26-fpm-alpine3.16
 
 LABEL name="PHP" \
-      Version="8.0.20" \
+      Version="8.0.26" \
       maintanier="ads.silvanei@gmail.com" \
       alpine-package-version="https://pkgs.alpinelinux.org/packages?name=nginx&branch=v3.16&repo=main&arch=x86"
 
@@ -17,6 +17,7 @@ RUN set -e \
         libzip-dev \
         libxml2-dev \
         mpdecimal-dev \
+    && apk add --update linux-headers \
     && apk add --no-cache tzdata \
     && apk add --no-cache icu \
     && apk add --no-cache libpng \

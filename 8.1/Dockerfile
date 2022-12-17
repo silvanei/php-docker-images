@@ -1,7 +1,7 @@
-FROM php:8.1.7-fpm-alpine3.16
+FROM php:8.1.13-fpm-alpine3.17
 
 LABEL name="PHP" \
-      Version="8.1.3" \
+      Version="8.1.13" \
       maintanier="ads.silvanei@gmail.com" \
       alpine-package-version="https://pkgs.alpinelinux.org/packages?name=mpdecimal&branch=v3.16&repo=main&arch=x86"
 
@@ -18,6 +18,7 @@ RUN set -e \
         libxml2-dev \
         mpdecimal-dev \
         postgresql-dev \
+    && apk add --update linux-headers \
     && apk add --no-cache tzdata \
     && apk add --no-cache icu \
     && apk add --no-cache libpng \
