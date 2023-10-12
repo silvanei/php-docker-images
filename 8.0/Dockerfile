@@ -1,7 +1,7 @@
-FROM php:8.0.26-fpm-alpine3.16
+FROM php:8.0.30-fpm-alpine3.16
 
 LABEL name="PHP" \
-      Version="8.0.26" \
+      Version="8.0.30" \
       maintanier="ads.silvanei@gmail.com" \
       alpine-package-version="https://pkgs.alpinelinux.org/packages?name=nginx&branch=v3.16&repo=main&arch=x86"
 

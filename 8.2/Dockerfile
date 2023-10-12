@@ -1,9 +1,9 @@
-FROM php:8.2.0-fpm-alpine3.17
+FROM php:8.2.11-fpm-alpine3.18
 
 LABEL name="PHP" \
-      Version="8.2.0" \
+      Version="8.2.11" \
       maintanier="ads.silvanei@gmail.com" \
-      alpine-package-version="https://pkgs.alpinelinux.org/packages?name=mpdecimal&branch=v3.17&repo=main&arch=x86"
+      alpine-package-version="https://pkgs.alpinelinux.org/packages?name=mpdecimal&branch=v3.18&repo=main&arch=x86"
 
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
     TZ="America/Sao_Paulo"
@@ -40,7 +40,7 @@ RUN set -e \
         decimal \
         redis \
         xdebug \
-        openswoole \
+        swoole \
     && docker-php-ext-enable \
         ds \
         decimal \
